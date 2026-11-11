@@ -1,0 +1,28 @@
+{
+  "name": "instituto-merida",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "iniciar": "node scripts/start.mjs",
+    "dev": "node scripts/dev.mjs",
+    "start": "node server/index.mjs",
+    "portal:admin": "node server/admin.mjs",
+    "portal:setup": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup-admin.ps1",
+    "test:portal": "node scripts/verify-portal.mjs",
+    "portal:pdf": "node scripts/generate-reference-pdf.mjs",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "^1.1.0",
+    "@playwright/test": "^1.65.0",
+    "pdfjs-dist": "^6.5.438",
+    "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "multer": "^2.5.0"
+  }
+}

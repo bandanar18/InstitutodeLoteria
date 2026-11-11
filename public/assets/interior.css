@@ -1,0 +1,25 @@
+/* The original public application is retained on internal routes. */
+#root{font-family:'DM Sans',sans-serif;color:#123459;background:#f7fafe}
+#root>div>header,#root>div>footer{display:none!important}
+#root h1,#root h2,#root h3{font-family:'Manrope',sans-serif;letter-spacing:-.035em}
+#root h1{font-weight:650}
+#root main>div>section:first-child{min-height:260px!important;padding-top:60px!important;padding-bottom:60px!important}
+#root main>div>section:first-child>img{opacity:.28}
+#root main>div>section:first-child{background:#082e52}
+#root main>div>section:first-child>div.absolute{background:linear-gradient(90deg,#082e52f0,#082e5250)!important}
+#root .rounded-md,#root .rounded-lg{border-radius:12px}
+#root main .container{max-width:1320px}
+#root .bg-background{background:#f7fafe}
+#root .text-primary,#root .text-secondary{color:#145e9c}
+#root a.bg-primary,#root button.bg-primary{background:#1464a0;color:white;border-radius:7px}
+#root a.bg-secondary,#root button.bg-secondary{color:white}
+.footer-bottom p{font-size:inherit;line-height:inherit}
+#root .shadow-card{box-shadow:0 4px 20px #12345907}
+#root input,#root select,#root textarea{border-radius:7px;background:white}
+.demo-form-notice{padding:14px 16px;border-radius:8px;background:#eaf3fb;color:#405f7e;font-size:16px;line-height:1.7}
+#root .text-sm{font-size:16px;line-height:1.65}
+#root .text-xs{font-size:14px;line-height:1.6}
+#root .bg-secondary{background:#1464a0}
+#root .text-text-muted{color:#566e86}
+/* Original utility styles are layered; the redesigned shell has its own layer. */
+@media(max-width:760px){#root main>div>section:first-child{min-height:220px!important}#root h1{font-size:34px}#root .py-20{padding-top:45px;padding-bottom:45px}}

@@ -1,0 +1,10 @@
+import { randomUUID } from 'node:crypto';
+import { db, hashPassword, now } from './store.mjs';
+const email=(process.argv[2]||'').trim().toLowerCase();
+if(!/^\S+@\S+\.\S+$/.test(email))throw Error('Uso: npm run portal:admin -- correo@instituto.gob.ve (contraseña por entrada estándar)');
+let password='';for await(const chunk of process.stdin)password+=chunk;
+password=password.replace(/[\r\n]+$/,'');
+if(password.length<12||password.length>128)throw Error('La contraseña debe contener entre 12 y 128 caracteres.');
+if(db.prepare('SELECT id FROM users WHERE email=?').get(email))throw Error('La cuenta ya existe. No se modifican ni elevan cuentas existentes.');
+db.prepare('INSERT INTO users VALUES(?,?,?,?,?,?)').run(randomUUID(),'Gestión institucional',email,await hashPassword(password),'admin',now());
+console.log('Cuenta de gestión creada. Accede desde /portal.');

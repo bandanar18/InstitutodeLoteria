@@ -1,0 +1,15 @@
+import { readFile, access } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
+import assert from 'node:assert/strict';
+const source = await readFile('src/main.js', 'utf8');
+execFileSync(process.execPath, ['--check', 'src/main.js']);
+const literalAssets = [...source.matchAll(/(?:src|href)=["'](\/(?:assets\/)?[^"'$]+\.(?:png|jpg|css|js))["']/g)].map(m=>m[1]);
+for(const name of ['animalitos','centena','dupleta','kino','andes','triple','hero','centro','online','brand']) literalAssets.push(`/assets/${name}.png`);
+for(const name of ['salud','educacion','deporte','cultura'])literalAssets.push(`/inicio_${name}.jpg`);
+for(const file of new Set(literalAssets))await access(`public${file}`);
+const original=await readFile('public/assets/original.js','utf8');
+for(const route of ['instituto','beneficencia','loteria','tramites','transparencia','normativa','noticias','contacto'])assert(original.includes('path:`'+route+'`'), `Original route missing: ${route}`);
+for(const file of [...new Set([...original.matchAll(/(?:src|image):`(\/[^`]+)`/g)].map(m=>m[1]))])await access(`public${file}`);
+assert(source.includes('No se ha enviado ni guardado tu información'), 'Demo forms must not pretend to submit');
+assert(source.includes('prefers-reduced-motion'), 'Reduced-motion support missing');
+console.log('Verified JavaScript, local assets, preserved routes and demo form disclosure.');
