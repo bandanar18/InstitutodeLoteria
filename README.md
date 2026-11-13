@@ -58,9 +58,9 @@ Las notificaciones y observaciones se consultan en el portal. No se integraron c
 
 Los formularios de beneficencia y contacto del sitio original siguen siendo demostrativos. El nuevo portal sí guarda las cuentas, expedientes y archivos en el servidor local y comunica esa finalidad en el registro. No procesa cobros bancarios. Las modalidades de juegos, autorizaciones, documentos y textos institucionales siguen sujetos a validación oficial. No se ha modificado ni desplegado el sitio Netlify original.
 
-## Agencias online (FortunaBet)
+## Agencias online (Fortuna.Bet)
 
-La página `/agencias-online` explica la afiliación y redirige a FortunaBet, que administra el registro de usuarios y la activación de agencias. Las direcciones se configuran en `.env` (ver `.env.example`):
+La página `/agencias-online` explica la afiliación y redirige a Fortuna.Bet, que administra el registro de usuarios y la activación de agencias. Las direcciones se configuran en `.env` (ver `.env.example`):
 
-- `VITE_FORTUNABET_URL`: web de la Lotería FortunaBet (el botón «Crear mi cuenta» abre `<url>/registro`).
+- `VITE_FORTUNABET_URL`: web de la Lotería Fortuna.Bet (el botón «Crear mi cuenta» abre `<url>/registro`).
 - `VITE_FORTUNABET_WALLET_URL`: Wallet de Agencias Virtuales (botón «Activar mi agencia»).

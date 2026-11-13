@@ -1,7 +1,7 @@
 import './agencias.css';
 
-// Direcciones de FortunaBet (operadora de las agencias online).
-// Se configuran en .env: VITE_FORTUNABET_URL (web de la Lotería FortunaBet)
+// Direcciones de Fortuna.Bet (operadora de las agencias online).
+// Se configuran en .env: VITE_FORTUNABET_URL (web de la Lotería Fortuna.Bet)
 // y VITE_FORTUNABET_WALLET_URL (Wallet de Agencias Virtuales).
 const clean = url => String(url || '').replace(/\/$/, '');
 const FORTUNABET_URL = clean(import.meta.env.VITE_FORTUNABET_URL) || 'http://localhost:5173';
@@ -28,7 +28,7 @@ const icon = (name, size = 22) => `<svg width="${size}" height="${size}" viewBox
 const ext = icon('external', 16);
 
 const steps = [
-  ['badge', 'Abre el registro de agencia', 'Desde aquí vas directo al formulario de agencia online de la Wallet de FortunaBet. No es el registro de jugador.'],
+  ['badge', 'Abre el registro de agencia', 'Desde aquí vas directo al formulario de agencia online de la Wallet de Fortuna.Bet. No es el registro de jugador.'],
   ['user', 'Tus datos', 'Nombre, cédula, fecha de nacimiento, teléfono venezolano y correo. Tu agencia aparece con tu nombre.'],
   ['key', 'Crea tu acceso', 'Elige tu correo y contraseña y acepta los Términos del Programa de Agencias.'],
   ['qr', 'Recibe tu código y QR', 'Tu agencia queda activa al instante con un código de afiliado único para compartir.'],
@@ -46,26 +46,26 @@ const requirements = [
   'Ser mayor de 18 años.',
   'Cédula venezolana (V o E) o pasaporte vigente.',
   'Número de teléfono venezolano y correo electrónico propios.',
-  'Cuenta de FortunaBet activa y sin autoexclusión vigente.',
+  'Cuenta de Fortuna.Bet activa y sin autoexclusión vigente.',
   'Aceptar los Términos del Programa de Agencias.',
   'Una persona = una agencia.',
 ];
 
 const withdrawals = [
-  'Verificación de identidad (KYC nivel 2) aprobada en FortunaBet.',
+  'Verificación de identidad (KYC nivel 2) aprobada en Fortuna.Bet.',
   'Una cuenta de Pago Móvil registrada en tu directorio, confirmada con un código SMS.',
   'Los retiros se pagan siempre en bolívares; si retiras desde USDT se usa la tasa BCV del día.',
 ];
 
 const faqs = [
-  ['¿Quién administra el registro de las agencias online?', 'FortunaBet, operadora de las agencias online. El registro de usuarios, la activación de cada agencia, las comisiones y los retiros se gestionan en sus plataformas. La Lotería de Mérida regula la actividad.'],
+  ['¿Quién administra el registro de las agencias online?', 'Fortuna.Bet, operadora de las agencias online. El registro de usuarios, la activación de cada agencia, las comisiones y los retiros se gestionan en sus plataformas. La Lotería de Mérida regula la actividad.'],
   ['¿En qué se diferencia del registro de jugador?', 'El registro de agencia online crea tu cuenta y, en el mismo paso, activa tu agencia con su código y QR para invitar jugadores y cobrar comisiones. El registro de jugador solo sirve para jugar.'],
-  ['¿Y si ya tengo cuenta en FortunaBet?', 'Pulsa «Ya soy agencia · Entrar», inicia sesión con tu mismo correo y contraseña y activa tu agencia con un toque.'],
-  ['¿Cuánto cuesta afiliarme?', 'Activar tu agencia no requiere inversión. Solo necesitas tu cuenta de FortunaBet y aceptar los términos del programa.'],
-  ['¿Cómo se vinculan mis referidos?', 'Cuando alguien abre tu enlace o escanea tu QR, FortunaBet guarda tu código y lo muestra en su registro («Te invitó: tu agencia»). El vínculo se crea solo al registrarse y es permanente.'],
+  ['¿Y si ya tengo cuenta en Fortuna.Bet?', 'Pulsa «Ya soy agencia · Entrar», inicia sesión con tu mismo correo y contraseña y activa tu agencia con un toque.'],
+  ['¿Cuánto cuesta afiliarme?', 'Activar tu agencia no requiere inversión. Solo necesitas tu cuenta de Fortuna.Bet y aceptar los términos del programa.'],
+  ['¿Cómo se vinculan mis referidos?', 'Cuando alguien abre tu enlace o escanea tu QR, Fortuna.Bet guarda tu código y lo muestra en su registro («Te invitó: tu agencia»). El vínculo se crea solo al registrarse y es permanente.'],
   ['¿Qué jugadas no generan comisión?', 'Las simulaciones, las jugadas de personas que aún no tienen un depósito aprobado y las jugadas hechas mientras la agencia esté suspendida.'],
   ['¿Cuándo puedo retirar mis comisiones?', 'Puedes pasarlas a tu saldo de juego desde el primer día. Para retirarlas al banco necesitas la verificación de identidad nivel 2 y una cuenta de Pago Móvil registrada.'],
-  ['¿Puede suspenderse una agencia?', 'Sí. El equipo de FortunaBet puede suspender una agencia que incumpla los términos; mientras esté suspendida no genera comisiones nuevas ni puede retirar, pero conserva su historial.'],
+  ['¿Puede suspenderse una agencia?', 'Sí. El equipo de Fortuna.Bet puede suspender una agencia que incumpla los términos; mientras esté suspendida no genera comisiones nuevas ni puede retirar, pero conserva su historial.'],
 ];
 
 export function agenciasMarkup() {
@@ -74,11 +74,11 @@ export function agenciasMarkup() {
     <div class="ag-container ag-hero-grid">
       <div class="ag-hero-copy">
         <a class="ag-crumb" href="/">Inicio</a><span class="ag-crumb-sep">/</span><a class="ag-crumb" href="/loteria">Lotería</a>
-        <span class="ag-eyebrow">AGENCIAS ONLINE · AFILIACIÓN CON FORTUNABET</span>
-        <h1>Conviértete en agencia virtual con tu <em>wallet</em> FortunaBet</h1>
-        <p>La afiliación de agencias online de la Lotería de Mérida se realiza con <strong>FortunaBet</strong>, la operadora encargada del registro, la activación y la administración de cada agencia. Regístrate, activa tu wallet y empieza a ganar comisiones.</p>
+        <span class="ag-eyebrow">AGENCIAS ONLINE · AFILIACIÓN CON FORTUNA.BET</span>
+        <h1>Conviértete en agencia virtual con tu <em>wallet</em> Fortuna.Bet</h1>
+        <p>La afiliación de agencias online de la Lotería de Mérida se realiza con <strong>Fortuna.Bet</strong>, la operadora encargada del registro, la activación y la administración de cada agencia. Regístrate, activa tu wallet y empieza a ganar comisiones.</p>
         <div class="ag-actions"><a class="ag-btn green" href="${REGISTER_URL}" ${external} data-fortuna="registro">Registrar mi agencia online ${ext}</a><a class="ag-btn ghost" href="${WALLET_URL}" ${external} data-fortuna="wallet">Ya soy agencia · Entrar ${ext}</a></div>
-        <p class="ag-hero-hint">${icon('shield', 16)} El registro se completa en la Wallet de Agencias de FortunaBet.</p>
+        <p class="ag-hero-hint">${icon('shield', 16)} El registro se completa en la Wallet de Agencias de Fortuna.Bet.</p>
         <ul class="ag-facts"><li><strong>3 %</strong><span>de cada jugada</span></li><li><strong>0</strong><span>inversión</span></li><li><strong>1</strong><span>sola cuenta</span></li></ul>
       </div>
       <div class="ag-hero-visual">
@@ -96,13 +96,13 @@ export function agenciasMarkup() {
   <section class="ag-band">
     <div class="ag-container ag-band-inner">
       <span class="ag-icon light">${icon('building')}</span>
-      <p><strong>¿Quién hace qué?</strong> FortunaBet registra a los usuarios, activa las agencias y administra comisiones y retiros. La Lotería de Mérida regula la actividad y vela por el juego responsable.</p>
+      <p><strong>¿Quién hace qué?</strong> Fortuna.Bet registra a los usuarios, activa las agencias y administra comisiones y retiros. La Lotería de Mérida regula la actividad y vela por el juego responsable.</p>
     </div>
   </section>
 
   <section class="ag-section ag-soft" id="proceso">
     <div class="ag-container">
-      <div class="ag-heading"><span class="ag-eyebrow dark">ASÍ TE AFILIAS</span><h2>Cinco pasos y tu agencia está lista<span>.</span></h2><p>Un solo formulario crea tu cuenta y activa tu agencia en la Wallet de FortunaBet.</p></div>
+      <div class="ag-heading"><span class="ag-eyebrow dark">ASÍ TE AFILIAS</span><h2>Cinco pasos y tu agencia está lista<span>.</span></h2><p>Un solo formulario crea tu cuenta y activa tu agencia en la Wallet de Fortuna.Bet.</p></div>
       <ol class="ag-steps">${steps.map(([ico, title, text], i) => `<li><span class="ag-step-num">${i + 1}</span><span class="ag-icon">${icon(ico)}</span><h3>${title}</h3><p>${text}</p></li>`).join('')}</ol>
       <div class="ag-step-actions"><a class="ag-btn green" href="${REGISTER_URL}" ${external}>Ir al registro de agencia online ${ext}</a></div>
     </div>
@@ -110,14 +110,14 @@ export function agenciasMarkup() {
 
   <section class="ag-section" id="beneficios">
     <div class="ag-container">
-      <div class="ag-heading"><span class="ag-eyebrow dark">TU WALLET DE AGENCIA</span><h2>Todo lo de tu agencia en un solo lugar<span>.</span></h2><p>Una aplicación que se instala en tu teléfono, conectada en tiempo real con FortunaBet.</p></div>
+      <div class="ag-heading"><span class="ag-eyebrow dark">TU WALLET DE AGENCIA</span><h2>Todo lo de tu agencia en un solo lugar<span>.</span></h2><p>Una aplicación que se instala en tu teléfono, conectada en tiempo real con Fortuna.Bet.</p></div>
       <div class="ag-approve four">${features.map(([ico, title, text]) => `<article><span class="ag-icon">${icon(ico)}</span><h3>${title}</h3><p>${text}</p></article>`).join('')}</div>
     </div>
   </section>
 
   <section class="ag-section ag-dark" id="requisitos">
     <div class="ag-container ag-rules">
-      <div><span class="ag-eyebrow">REQUISITOS</span><h2>Lo que necesitas para afiliarte</h2><p>No hay que cargar expedientes ni pagar para activar tu agencia. FortunaBet valida tus datos al registrarte.</p><a class="ag-btn green" href="${REGISTER_URL}" ${external}>Registrar mi agencia online ${ext}</a></div>
+      <div><span class="ag-eyebrow">REQUISITOS</span><h2>Lo que necesitas para afiliarte</h2><p>No hay que cargar expedientes ni pagar para activar tu agencia. Fortuna.Bet valida tus datos al registrarte.</p><a class="ag-btn green" href="${REGISTER_URL}" ${external}>Registrar mi agencia online ${ext}</a></div>
       <div class="ag-req-cols">
         <div><h3>Para activar tu agencia</h3><ul>${requirements.map(rule => `<li>${icon('check', 18)}<span>${rule}</span></li>`).join('')}</ul></div>
         <div><h3>Para retirar al banco</h3><ul>${withdrawals.map(rule => `<li>${icon('check', 18)}<span>${rule}</span></li>`).join('')}</ul></div>
@@ -127,23 +127,23 @@ export function agenciasMarkup() {
 
   <section class="ag-section ag-soft" id="preguntas">
     <div class="ag-container ag-faq-grid">
-      <div class="ag-heading"><span class="ag-eyebrow dark">PREGUNTAS FRECUENTES</span><h2>Antes de afiliarte<span>.</span></h2><p>Para soporte de tu cuenta, comisiones o retiros, comunícate con FortunaBet desde su plataforma.</p></div>
+      <div class="ag-heading"><span class="ag-eyebrow dark">PREGUNTAS FRECUENTES</span><h2>Antes de afiliarte<span>.</span></h2><p>Para soporte de tu cuenta, comisiones o retiros, comunícate con Fortuna.Bet desde su plataforma.</p></div>
       <div class="ag-faq">${faqs.map(([q, a], i) => `<details${i === 0 ? ' open' : ''}><summary>${q}</summary><p>${a}</p></details>`).join('')}</div>
     </div>
   </section>
 
   <section class="ag-cta">
     <div class="ag-container ag-cta-inner">
-      <div><h2>¿Listo para tener tu agencia online?</h2><p>Crea tu cuenta en FortunaBet y activa tu Wallet de Agencias.</p></div>
+      <div><h2>¿Listo para tener tu agencia online?</h2><p>Crea tu cuenta en Fortuna.Bet y activa tu Wallet de Agencias.</p></div>
       <div class="ag-actions"><a class="ag-btn green" href="${REGISTER_URL}" ${external}>Registrar mi agencia online ${ext}</a><a class="ag-btn ghost" href="${WALLET_URL}" ${external}>Ya soy agencia · Entrar ${ext}</a></div>
     </div>
-    <p class="ag-container ag-notice">Juega con responsabilidad · Solo mayores de 18 años. Las comisiones, los saldos y los retiros de las agencias son gestionados por FortunaBet. Información de referencia sujeta a validación oficial de la Lotería de Mérida.</p>
+    <p class="ag-container ag-notice">Juega con responsabilidad · Solo mayores de 18 años. Las comisiones, los saldos y los retiros de las agencias son gestionados por Fortuna.Bet. Información de referencia sujeta a validación oficial de la Lotería de Mérida.</p>
   </section>
 </main>`;
 }
 
 export function initAgencias(element) {
-  document.title = 'Agencias online · Afiliación con FortunaBet · Lotería de Mérida';
+  document.title = 'Agencias online · Afiliación con Fortuna.Bet · Lotería de Mérida';
   element.innerHTML = agenciasMarkup();
 }
 

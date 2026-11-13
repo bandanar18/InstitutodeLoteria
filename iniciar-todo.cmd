@@ -1,15 +1,15 @@
 @echo off
 chcp 65001 >nul
-title Iniciar todo - Instituto de Merida + FortunaBet
+title Iniciar todo - Instituto de Merida + Fortuna.Bet
 set "LOTERIA=C:\Users\Jesus\Desktop\Proyectos con Claude\Loteria"
 set "WALLET=C:\Users\Jesus\Desktop\Proyectos con Claude\WalletLoteria"
 set "INSTITUTO=%~dp0"
 
 echo.
-echo  Iniciando FortunaBet, Wallet de Agencias e Instituto de Merida...
+echo  Iniciando Fortuna.Bet, Wallet de Agencias e Instituto de Merida...
 echo.
 
-rem 1) Docker (base de datos de FortunaBet)
+rem 1) Docker (base de datos de Fortuna.Bet)
 docker info >nul 2>&1
 if not errorlevel 1 goto docker_listo
 echo  Abriendo Docker Desktop, espera un momento...
@@ -21,9 +21,9 @@ if errorlevel 1 goto esperar_docker
 :docker_listo
 echo  Docker listo.
 
-rem 2) FortunaBet: API :3000 y web :5173
-start "FortunaBet (Loteria) - no cerrar" /D "%LOTERIA%" cmd /k npm.cmd run dev
-echo  Esperando a FortunaBet...
+rem 2) Fortuna.Bet: API :3000 y web :5173
+start "Fortuna.Bet (Loteria) - no cerrar" /D "%LOTERIA%" cmd /k npm.cmd run dev
+echo  Esperando a Fortuna.Bet...
 :esperar_fortuna
 timeout /t 2 /nobreak >nul
 curl -s -o nul http://localhost:3000/api/v1/ 2>nul
@@ -42,7 +42,7 @@ echo.
 echo  Listo:
 echo    Instituto de Merida ........ http://localhost:5180
 echo    Agencias online ............ http://localhost:5180/agencias-online
-echo    FortunaBet ................. http://localhost:5173
+echo    Fortuna.Bet ................. http://localhost:5173
 echo    Wallet de Agencias ......... http://localhost:5174
 echo.
 echo  Para apagar: Ctrl + C en cada ventana.
